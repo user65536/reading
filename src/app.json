@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/recommend/main",
     "pages/detail/main",
     "pages/mine/main",
     "pages/books/main",
