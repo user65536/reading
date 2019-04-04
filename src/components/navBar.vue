@@ -35,6 +35,7 @@ export default {
   bottom 0
   left 0
   right 0
+  background #ffffff
   .nav
     height 48px
     display flex
