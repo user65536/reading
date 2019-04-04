@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/mine/main",
     "pages/books/main",
     "pages/index/main",
     "pages/logs/main",
