@@ -29,6 +29,7 @@
         <div v-for="(book, index) in books" :key="index" class="book-item">
           <div class="cover">
             <img class="img" :src="book.images_medium" alt>
+            <div class="bottom-mask">未上架</div>
           </div>
           <div class="title">{{book.title}}</div>
         </div>
