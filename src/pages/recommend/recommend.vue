@@ -15,10 +15,10 @@
       </div>
     </div>
     <div class="btn-wrap">
-      <div class="btn btn-search">查询</div>
-      <div class="btn btn-recommend">推荐</div>
+      <div @click="showModal" class="btn btn-search">查询</div>
+      <div @click="showModal" class="btn btn-recommend">推荐</div>
     </div>
-    <div class="tips">信息不准确?联系我们</div>
+    <div @click="showModal" class="tips">信息不准确?联系我们</div>
   </div>
 </template>
 
@@ -30,7 +30,11 @@ export default {
     }
   },
   methods: {
-    
+    showModal() {
+      mpvue.showModal({
+        title: '还没写~~~'
+      })
+    }
   }
 }
 </script>

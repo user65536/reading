@@ -15,18 +15,18 @@
       <div class="content-header">
         <div class="title">与我相关</div>
         <div class="tools">
-          <div class="tool-item">
+          <div @click="showModal" class="tool-item">
             <span class="iconfont icon-bianji"></span>
             <span class="name">编辑</span>
           </div>
-          <div class="tool-item">
+          <div @click="navigateToRecommend" class="tool-item">
             <span class="iconfont icon-add-line"></span>
             <span class="name">推荐</span>
           </div>
         </div>
       </div>
       <div class="books-wrap">
-        <div v-for="(book, index) in books" :key="index" class="book-item">
+        <div @click="navigateToDetail" v-for="(book, index) in books" :key="index" class="book-item">
           <div class="cover">
             <img class="img" :src="book.images_medium" alt>
             <div class="bottom-mask">未上架</div>
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <nav-bar :activeIndex="1"></nav-bar>
+    <nav-bar @navbarChange="navbarChange" :activeIndex="1"></nav-bar>
   </div>
 </template>
 
@@ -97,7 +97,28 @@ export default {
     }
   },
   methods: {
-    
+    navbarChange(e) {
+      if(e === 0) {
+        mpvue.redirectTo({
+          url: '../books/main'
+        })
+      }
+    },
+    navigateToDetail() {
+      mpvue.navigateTo({
+          url: '../detail/main'
+      })
+    },
+    navigateToRecommend() {
+      mpvue.navigateTo({
+          url: '../recommend/main'
+      })
+    },
+    showModal() {
+      mpvue.showModal({
+        title: '还没写~~~'
+      })
+    }
   },
   components: {
     navBar

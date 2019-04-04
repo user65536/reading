@@ -6,7 +6,7 @@
     </div>
     <div class="content">
       <div class="books-wrap">
-        <div v-for="(book, index) in books" :key="index" class="book-item">
+        <div @click="navigateToDetail" v-for="(book, index) in books" :key="index" class="book-item">
           <div class="cover">
             <img class="img" :src="book.images_medium" alt>
           </div>
@@ -120,10 +120,19 @@ export default {
   },
   methods: {
     navbarChange(e) {
-      console.log(e)
+      if(e === 1) {
+        mpvue.redirectTo({
+          url: '../mine/main'
+        })
+      }
     },
     topbarChange(index) {
       this.activeNavIndex = index
+    },
+    navigateToDetail() {
+      mpvue.navigateTo({
+          url: '../detail/main'
+        })
     }
   },
   components: {

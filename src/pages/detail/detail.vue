@@ -18,11 +18,11 @@
         <span class="iconfont" :class="like ? 'icon-xiangkan' : 'icon-xihuan'"></span>
         <span class="num">1242</span>
       </div>
-      <div class="share">
+      <div @click="showModal" class="share">
         <span class="iconfont icon-fenxiang"></span>
         <span class="name">分享</span>
       </div>
-      <div class="btn">上架提醒</div>
+      <div @click="showModal" class="btn">上架提醒</div>
     </div>
   </div>
 </template>
@@ -37,6 +37,11 @@ export default {
   methods: {
     changeLike() {
       this.like = !this.like
+    },
+    showModal() {
+      mpvue.showModal({
+        title: '还没写~~~'
+      })
     }
   }
 }
